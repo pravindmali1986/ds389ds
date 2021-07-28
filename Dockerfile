@@ -32,7 +32,7 @@ RUN mkdir /etc/dirsrv-tmpl && mv /etc/dirsrv/* /etc/dirsrv-tmpl
 EXPOSE 389 636
 
 # supervisord
-RUN yum clean all && rm -r /var/cache/yum && yum install -y epel-release python python-setuptools python-setuptools-devel python-pip && pip install pip --upgrade && pip install supervisor
+RUN yum clean all && rm -r /var/cache/yum && yum install -y epel-release python python-setuptools supervisor
 RUN mkdir -p /etc/supervisor
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
