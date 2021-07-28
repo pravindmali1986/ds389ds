@@ -7,7 +7,7 @@
 FROM centos:7
 MAINTAINER michel4j@gmail.com
 
-RUN yum clean all && rm -r /var/cache/yum && yum -y install 389-ds-base.x86_64 openldap-clients && curl hostname procps-ng openssl nss-tools coreutils && yum clean all
+RUN yum clean all && rm -r /var/cache/yum && yum -y install 389-ds-base.x86_64 openldap-clients curl hostname procps-ng openssl nss-tools coreutils && yum clean all
 
 RUN curl -qL https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 -o /confd && \
     chmod +x /confd
